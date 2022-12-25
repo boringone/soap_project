@@ -20,5 +20,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('recipies.urls')),
-    path('<path:path>', views.my_view, name='react')
+    path('', views.my_view, name='react')
 ]
