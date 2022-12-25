@@ -10,11 +10,22 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js(x?)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {presets: ["@babel/preset-env", "@babel/preset-react"]}
+                use: [
+                    'babel-loader'
+                ],
+                resolve: {
+                    extensions: ['.js', '.jsx']
+                }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ],
             }
-        ]
+        ],
     }
 }
